@@ -24,13 +24,17 @@ public:
 	void Setaddress(const char* adsr);
 	void Settypeactivity(const char* tpact);
 
+	void Printb();
+	void Print();
+
 	const char* Getcompanyname()const;
 	const char* Getowner()const;
 	const char* Getphone()const;
 	const char* Getaddress()const;
 	const char* Gettypeactivity()const;
 
-	void filecreation();
+
+
 
 	
 };

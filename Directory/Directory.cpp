@@ -32,6 +32,16 @@ Directory::Directory(const char* comnam, const char* own, const char* phn, const
 {
 	this->typeactivity = new char[strlen(tpact) + 1];
 	strcpy_s(this->typeactivity, strlen(tpact) + 1, tpact);
+
+	ofstream out("Directory.txt", ios::app);
+	if (out.is_open()) {
+	 	out << " |      " << companyname << "      |      " << owner << "      |      " << phone << "      |      " << address << "      |      " << typeactivity << "      |" << endl;
+		out << "----------------------------------------------------------------------------------------------------------------------------------";
+		out.close(); 
+	}
+	else {
+		cout << "Could not open the file"; 
+	}
 }
 
 Directory::~Directory()
@@ -106,6 +116,18 @@ void Directory::Settypeactivity(const char* tpact)
 	strcpy_s(this->typeactivity, strlen(tpact) + 1, tpact); 
 }
 
+void Directory::Printb()
+{
+	cout << " |    " << "company name" << "      |    " << "owner" << "      |    " << "phone" << "      |    " << "address" << "      |    " << "type activity" << "      |" << endl; 
+	cout << "----------------------------------------------------------------------------------------------------" << endl; 
+}
+
+void Directory::Print()
+{
+	cout << " |      " << companyname << "      |      " << owner << "      |      " << phone << "      |      " << address << "      |      " << typeactivity << "      |" << endl; 
+	cout<< "------------------------------------------------------------------------------------------------------"<<endl;  
+} 
+
 
 
 
@@ -136,12 +158,5 @@ const char* Directory::Gettypeactivity() const
 	return typeactivity;
 }
 
-void Directory::filecreation()
-{
-	ofstream out("Directory.txt");
-	if (out.is_open()) {
-		out << " | " << "Num" << " | ";
-	}
 
-}
 
