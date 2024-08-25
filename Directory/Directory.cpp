@@ -35,8 +35,7 @@ Directory::Directory(const char* comnam, const char* own, const char* phn, const
 
 	ofstream out("Directory.txt", ios::app);
 	if (out.is_open()) {
-	 	out << " |      " << companyname << "      |      " << owner << "      |      " << phone << "      |      " << address << "      |      " << typeactivity << "      |" << endl;
-		out << "----------------------------------------------------------------------------------------------------------------------------------";
+	 	out  << companyname << "      " << owner << "       " << phone << "         " << address << "       " << typeactivity  << endl;
 		out.close(); 
 	}
 	else {
